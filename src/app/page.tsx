@@ -26,20 +26,20 @@ import confetti from "canvas-confetti";
 import { Cpu, Award } from "lucide-react";
 
 export default function Home() {
-  // Theme state
-  const [darkMode, setDarkMode] = useState(true);
+  // Theme state: Default to Light Mode
+  const [darkMode, setDarkMode] = useState(false);
 
-  // Sync theme with localStorage and document element
+  // Sync theme with localStorage and document element - DEFAULT TO LIGHT MODE
   useEffect(() => {
     const saved = localStorage.getItem("airllab-theme");
-    if (saved === "light") {
+    if (saved === "dark") {
+      setDarkMode(true);
+      document.documentElement.classList.remove("light");
+      document.documentElement.classList.add("dark");
+    } else {
       setDarkMode(false);
       document.documentElement.classList.remove("dark");
       document.documentElement.classList.add("light");
-    } else {
-      setDarkMode(true);
-      document.documentElement.classList.add("dark");
-      document.documentElement.classList.remove("light");
     }
   }, []);
 
