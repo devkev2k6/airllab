@@ -59,39 +59,63 @@ export function Navigation({
         </div>
 
         {/* Center Quick Jump Links */}
-        <nav className="hidden md:flex items-center space-x-1 text-xs font-medium text-slate-400">
+        <nav className="hidden lg:flex items-center space-x-1 text-xs font-medium text-slate-400">
           <button
-            onClick={() => scrollToSection("sandbox")}
-            className="px-2.5 py-1.5 rounded hover:text-cyan-400 hover:bg-slate-900 transition flex items-center space-x-1.5"
+            onClick={() => scrollToSection("concept")}
+            className="px-2 py-1.5 rounded hover:text-cyan-400 hover:bg-slate-900 transition"
           >
-            <Layers className="h-3.5 w-3.5" />
-            <span>Sandbox</span>
+            Concept
           </button>
           <button
-            onClick={() => scrollToSection("engine")}
-            className="px-2.5 py-1.5 rounded hover:text-indigo-400 hover:bg-slate-900 transition flex items-center space-x-1.5"
+            onClick={() => scrollToSection("sandbox")}
+            className="px-2 py-1.5 rounded hover:text-cyan-400 hover:bg-slate-900 transition"
           >
-            <Cpu className="h-3.5 w-3.5" />
-            <span>Induction Engine</span>
+            Demo Lab
+          </button>
+          <button
+            onClick={() => scrollToSection("experiment")}
+            className="px-2 py-1.5 rounded hover:text-indigo-400 hover:bg-slate-900 transition"
+          >
+            Experiments
+          </button>
+          <button
+            onClick={() => scrollToSection("failure-lab")}
+            className="px-2 py-1.5 rounded hover:text-rose-400 hover:bg-slate-900 transition"
+          >
+            Why AI Failed
           </button>
           <button
             onClick={() => scrollToSection("bdh-cq")}
-            className="px-2.5 py-1.5 rounded hover:text-purple-400 hover:bg-slate-900 transition flex items-center space-x-1.5"
+            className="px-2 py-1.5 rounded hover:text-purple-400 hover:bg-slate-900 transition"
           >
-            <Sparkles className="h-3.5 w-3.5" />
-            <span>BDH-CQ Frontier</span>
+            BDH-CQ
           </button>
           <button
-            onClick={() => scrollToSection("assessment")}
-            className="px-2.5 py-1.5 rounded hover:text-amber-400 hover:bg-slate-900 transition flex items-center space-x-1.5"
+            onClick={() => scrollToSection("challenge")}
+            className="px-2 py-1.5 rounded hover:text-amber-400 hover:bg-slate-900 transition flex items-center space-x-1"
           >
-            <Award className="h-3.5 w-3.5" />
-            <span>Assessment & Badges</span>
-            {unlockedBadgeCount > 0 && (
-              <span className="ml-1 px-1.5 py-0.2 bg-amber-500/20 text-amber-300 border border-amber-500/30 text-[10px] rounded-full">
-                {unlockedBadgeCount}
-              </span>
-            )}
+            <span>Challenge</span>
+            <span className="px-1 py-0.2 text-[9px] bg-amber-500/20 text-amber-300 rounded font-mono">
+              VS
+            </span>
+          </button>
+          <button
+            onClick={() => scrollToSection("summary-quiz")}
+            className="px-2 py-1.5 rounded hover:text-cyan-400 hover:bg-slate-900 transition"
+          >
+            Quiz
+          </button>
+          <button
+            onClick={() => scrollToSection("research")}
+            className="px-2 py-1.5 rounded hover:text-indigo-400 hover:bg-slate-900 transition"
+          >
+            Research
+          </button>
+          <button
+            onClick={() => scrollToSection("about")}
+            className="px-2 py-1.5 rounded hover:text-emerald-400 hover:bg-slate-900 transition"
+          >
+            About
           </button>
         </nav>
 
