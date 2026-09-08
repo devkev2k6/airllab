@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import { TASK_BANK } from "@/lib/arc/task-bank";
 import { Task, DemonstrationPair, Grid, Badge } from "@/lib/arc/types";
 import { runSymbolicSynthesis, cloneGrid } from "@/lib/engine/symbolic-engine";
@@ -28,6 +28,36 @@ import { Cpu, Award } from "lucide-react";
 export default function Home() {
   // Theme state
   const [darkMode, setDarkMode] = useState(true);
+
+  // Sync theme with localStorage and document element
+  useEffect(() => {
+    const saved = localStorage.getItem("airllab-theme");
+    if (saved === "light") {
+      setDarkMode(false);
+      document.documentElement.classList.remove("dark");
+      document.documentElement.classList.add("light");
+    } else {
+      setDarkMode(true);
+      document.documentElement.classList.add("dark");
+      document.documentElement.classList.remove("light");
+    }
+  }, []);
+
+  const handleSetDarkMode = (val: boolean) => {
+    setDarkMode(val);
+    try {
+      localStorage.setItem("airllab-theme", val ? "dark" : "light");
+    } catch {
+      // ignore
+    }
+    if (val) {
+      document.documentElement.classList.add("dark");
+      document.documentElement.classList.remove("light");
+    } else {
+      document.documentElement.classList.remove("dark");
+      document.documentElement.classList.add("light");
+    }
+  };
 
   // Guided Tour modal state
   const [isTourOpen, setIsTourOpen] = useState(false);
@@ -175,11 +205,11 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0B1020] text-[#E5E7EB] flex flex-col selection:bg-cyan-500/30 selection:text-cyan-200 font-sans">
+    <div className="min-h-screen bg-[var(--background)] text-[var(--foreground)] flex flex-col selection:bg-cyan-500/30 selection:text-cyan-200 font-sans transition-colors duration-200">
       {/* Top Navigation Bar */}
       <Navigation
         darkMode={darkMode}
-        setDarkMode={setDarkMode}
+        setDarkMode={handleSetDarkMode}
         onStartTour={() => setIsTourOpen(true)}
         unlockedBadgeCount={badges.filter((b) => b.unlocked).length}
       />
@@ -285,7 +315,7 @@ export default function Home() {
       />
 
       {/* Lab Footer with Official Literature Citations */}
-      <footer className="border-t border-slate-800 bg-[#0B1020] py-8 px-4 sm:px-6 lg:px-8 text-xs text-slate-500 font-mono">
+      <footer className="border-t border-slate-800 bg-[var(--background)] py-8 px-4 sm:px-6 lg:px-8 text-xs text-slate-500 font-mono transition-colors duration-200">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center space-x-2">
             <Cpu className="h-4 w-4 text-cyan-400" />

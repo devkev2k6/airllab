@@ -12,6 +12,7 @@
   --accent-emerald: #10B981;
 }
 
+html.light,
 .light {
   --background: #F8FAFC;
   --foreground: #1F2937;
@@ -46,6 +47,16 @@ body {
   background: rgba(100, 116, 139, 0.8);
 }
 
+html.light ::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+html.light ::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+}
+html.light ::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
 /* ARC Grid cell glow */
 .cell-glow-green {
   box-shadow: 0 0 12px rgba(34, 197, 94, 0.6);
@@ -63,4 +74,227 @@ body {
   50% {
     box-shadow: 0 0 16px rgba(239, 68, 68, 0.9);
   }
+}
+
+/* ==================== LIGHT THEME OVERRIDES ==================== */
+
+html.light,
+html.light body,
+html.light main {
+  background-color: #F8FAFC !important;
+  color: #1F2937 !important;
+}
+
+/* Card surfaces */
+html.light .bg-slate-900,
+html.light .bg-slate-900\/60,
+html.light .bg-slate-900\/70,
+html.light .bg-slate-900\/80,
+html.light .bg-slate-900\/90 {
+  background-color: #FFFFFF !important;
+  border-color: #E2E8F0 !important;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05);
+}
+
+/* Secondary nested surfaces / grids */
+html.light .bg-slate-950,
+html.light .bg-slate-950\/60,
+html.light .bg-slate-950\/70,
+html.light .bg-slate-950\/80,
+html.light .bg-slate-950\/90 {
+  background-color: #F8FAFC !important;
+  border-color: #E2E8F0 !important;
+}
+
+/* Buttons and pills */
+html.light .bg-slate-800,
+html.light .bg-slate-800\/60,
+html.light .bg-slate-800\/70,
+html.light .bg-slate-800\/80,
+html.light .bg-slate-800\/90 {
+  background-color: #F1F5F9 !important;
+  color: #1F2937 !important;
+  border-color: #CBD5E1 !important;
+}
+
+html.light .bg-slate-800:hover {
+  background-color: #E2E8F0 !important;
+  color: #0F172A !important;
+}
+
+/* Borders */
+html.light .border-slate-800,
+html.light .border-slate-800\/60,
+html.light .border-slate-800\/80,
+html.light .border-slate-800\/90,
+html.light .border-slate-700 {
+  border-color: #E2E8F0 !important;
+}
+
+/* Typography */
+html.light .text-white {
+  color: #0F172A !important;
+}
+
+html.light .text-slate-100,
+html.light .text-slate-200 {
+  color: #1E293B !important;
+}
+
+html.light .text-slate-300 {
+  color: #334155 !important;
+}
+
+html.light .text-slate-400 {
+  color: #475569 !important;
+}
+
+html.light .text-slate-500 {
+  color: #64748B !important;
+}
+
+/* Colored accent cards and badges in light mode */
+html.light .bg-cyan-950,
+html.light .bg-cyan-950\/40,
+html.light .bg-cyan-950\/50,
+html.light .bg-cyan-950\/60,
+html.light .bg-cyan-950\/80 {
+  background-color: #E0F2FE !important;
+  border-color: #BAE6FD !important;
+  color: #0369A1 !important;
+}
+
+html.light .bg-indigo-950,
+html.light .bg-indigo-950\/40,
+html.light .bg-indigo-950\/50,
+html.light .bg-indigo-950\/60,
+html.light .bg-indigo-950\/80 {
+  background-color: #EEF2FF !important;
+  border-color: #C7D2FE !important;
+  color: #4338CA !important;
+}
+
+html.light .bg-purple-950,
+html.light .bg-purple-950\/40,
+html.light .bg-purple-950\/50,
+html.light .bg-purple-950\/60,
+html.light .bg-purple-950\/80 {
+  background-color: #F3E8FF !important;
+  border-color: #E9D5FF !important;
+  color: #7E22CE !important;
+}
+
+html.light .bg-emerald-950,
+html.light .bg-emerald-950\/30,
+html.light .bg-emerald-950\/40,
+html.light .bg-emerald-950\/50,
+html.light .bg-emerald-950\/60 {
+  background-color: #DCFCE7 !important;
+  border-color: #BBF7D0 !important;
+  color: #15803D !important;
+}
+
+html.light .bg-rose-950,
+html.light .bg-rose-950\/30,
+html.light .bg-rose-950\/40,
+html.light .bg-rose-950\/50,
+html.light .bg-rose-950\/60 {
+  background-color: #FFE4E6 !important;
+  border-color: #FECDD3 !important;
+  color: #BE123C !important;
+}
+
+html.light .bg-amber-950,
+html.light .bg-amber-950\/40,
+html.light .bg-amber-950\/50,
+html.light .bg-amber-950\/60 {
+  background-color: #FEF3C7 !important;
+  border-color: #FDE68A !important;
+  color: #92400E !important;
+}
+
+/* Light mode text accents */
+html.light .text-cyan-300,
+html.light .text-cyan-400 {
+  color: #0284C7 !important;
+}
+
+html.light .text-indigo-300,
+html.light .text-indigo-400 {
+  color: #4F46E5 !important;
+}
+
+html.light .text-purple-300,
+html.light .text-purple-400 {
+  color: #7E22CE !important;
+}
+
+html.light .text-emerald-300,
+html.light .text-emerald-400 {
+  color: #16A34A !important;
+}
+
+html.light .text-amber-300,
+html.light .text-amber-400 {
+  color: #D97706 !important;
+}
+
+html.light .text-rose-300,
+html.light .text-rose-400 {
+  color: #E11D48 !important;
+}
+
+/* Header styling in light mode */
+html.light header {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  border-color: #E2E8F0 !important;
+}
+
+html.light nav button {
+  color: #475569 !important;
+}
+
+html.light nav button:hover {
+  color: #0284C7 !important;
+  background-color: #F1F5F9 !important;
+}
+
+/* Hero section light gradient */
+html.light section.relative.overflow-hidden {
+  background: linear-gradient(to bottom, #FFFFFF 0%, #F8FAFC 100%) !important;
+  border-color: #E2E8F0 !important;
+}
+
+/* Gradients on evaluation grid / showcase banners in light mode */
+html.light .from-slate-900 {
+  --tw-gradient-from: #FFFFFF var(--tw-gradient-from-position) !important;
+  --tw-gradient-to: rgba(255, 255, 255, 0) var(--tw-gradient-to-position) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+}
+
+html.light .via-slate-900\/90,
+html.light .via-slate-900\/60,
+html.light .via-indigo-950\/40,
+html.light .via-indigo-950\/30 {
+  --tw-gradient-to: rgba(248, 250, 252, 0) var(--tw-gradient-to-position) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), #F8FAFC var(--tw-gradient-via-position), var(--tw-gradient-to) !important;
+}
+
+html.light .to-slate-950,
+html.light .to-slate-900 {
+  --tw-gradient-to: #F1F5F9 var(--tw-gradient-to-position) !important;
+}
+
+/* Inputs & textareas in light mode */
+html.light input,
+html.light textarea {
+  background-color: #FFFFFF !important;
+  color: #0F172A !important;
+  border-color: #CBD5E1 !important;
+}
+
+/* Footer in light mode */
+html.light footer {
+  background-color: #F8FAFC !important;
+  border-color: #E2E8F0 !important;
 }
